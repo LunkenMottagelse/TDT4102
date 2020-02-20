@@ -27,7 +27,8 @@ CXX = clang-cl
 CXXFLAGS = /std:c++17 -TP -m64 -fdiagnostics-absolute-paths /W4 /GR \
 			/DEBUG /INCREMENTAL /nologo /EHsc \
 			-I$(GRAPH_LIB_INCLUDE) \
-			-I$(FLTK_INCLUDE)
+			-I$(FLTK_INCLUDE) \
+			-Wno-invalid-source-encoding
 DEBUG = /Od /Ob0 -DWIN32 /MDd /Zi /RTC1
 RELEASE = /O2 /Ob2 -DNDEBUG -DWIN32_LEAN_AND_MEAN /MD
 MACROS = -D_WINDOWS -DNOGDI -D_CRT_SECURE_NO_WARNINGS

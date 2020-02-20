@@ -1,0 +1,3 @@
+TDT4102, "Objektorientert proggramering" 
+TMA4105, "Matte 2" 
+TMA4115, "Matte 3" 
