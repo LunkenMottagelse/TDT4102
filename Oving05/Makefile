@@ -9,7 +9,7 @@ EXECUTABLE = release
 BUILDDIR = release
 !endif
 
-TDT4102_DIR = "C:/Program Files/tdt4102"
+TDT4102_DIR = "%ProgramFiles%/tdt4102"
 GRAPH_LIB_DIR = $(TDT4102_DIR)/Graph_lib
 FLTK_LIB_DIR = $(TDT4102_DIR)/FLTK-1.4/lib/$(LIB_TYPE)
 

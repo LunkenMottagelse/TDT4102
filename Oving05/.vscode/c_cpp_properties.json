@@ -1,6 +1,6 @@
 {
     "env": {
-        "tdt4102Path": "C:/Program Files/tdt4102",
+        "tdt4102Path": "${ProgramFiles}/tdt4102",
         "tdt4102IncludePath": [
             "${tdt4102Path}/Graph_lib/include/*",
             "${tdt4102Path}/FLTK-1.4/*"
