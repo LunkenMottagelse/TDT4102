@@ -1,0 +1,5 @@
+1 e:
+Det er lettere å holde oversikt over hva som er hva, samtidig som at det er lettere å begå feil når man må forholde seg til unødvendige abstraksjoner.
+
+3 c:
+Funksjonen er public, slik at andre kan kalle den.
