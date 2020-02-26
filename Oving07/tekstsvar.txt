@@ -1,0 +1,8 @@
+1a:
+
+Public vil si at variabelen eller funksjonen er tilgjengelig for alle. En Private kan kun når inne i klassen selv, mens ting som er protected er kun tilgjengelig for klassen selv og
+alle arvende klasser.
+
+1d:
+Hvis funksjonen ikke deklareres som virtual, vil bare Animal sin funksjon kalles hver gang og hvert objekt blir Animal uavhengig av om de faktisk er det eller en Dog eller Cat.
+
