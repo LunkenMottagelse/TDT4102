@@ -62,3 +62,85 @@ public:
 		innerR.set_fill_color(Color::black);
 	}
 };
+
+class Smiley : public EmptyFace{
+public:
+	Smiley(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : EmptyFace {center, rad, eyeRad, eyeHeight, eyeWidth}
+			, mouth{Point{center}, 55, 55, 181, 359}{
+		mouth.set_color(Color::black);
+	}
+	virtual void attach_to(Graph_lib::Window& win) override;
+private:
+	Graph_lib::Arc mouth;
+};
+
+class Sad : public EmptyFace{
+public:
+	Sad(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : EmptyFace {center, rad, eyeRad, eyeHeight, eyeWidth}
+			, mouth{Point{center.x, center.y + rad/2}, 55, 55, 1, 179}{
+		mouth.set_color(Color::black);
+	}
+	virtual void attach_to(Graph_lib::Window& win) override;
+private:
+	Graph_lib::Arc mouth;
+};
+
+class Surprised : public EmptyFace{
+public:
+	Surprised(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : EmptyFace {center, rad, eyeRad, eyeHeight, eyeWidth}
+			, mouth{Point{center.x, center.y + rad/2}, 55, 40, 0, 360}, rBrow{Point{center.x + eyeWidth - eyeRad, center.y - eyeHeight - 2*eyeRad},
+			Point{center.x + eyeWidth + eyeRad, center.y - eyeHeight - 2*eyeRad}}, lBrow{Point{center.x - eyeWidth - eyeRad,
+			center.y - eyeHeight - 2*eyeRad}, Point{center.x - eyeWidth + eyeRad, center.y - eyeHeight - 2*eyeRad}} {
+		mouth.set_color(Color::black);
+		lBrow.set_color(Color::black);
+		rBrow.set_color(Color::black);
+	}
+	virtual void attach_to(Graph_lib::Window& win) override;
+private:
+	Graph_lib::Arc mouth;
+	Graph_lib::Line rBrow;
+	Graph_lib::Line lBrow;
+};
+
+class Angry : public Sad{
+private:
+	Graph_lib::Arc lBrow;
+	Graph_lib::Arc rBrow;
+
+public:
+	Angry(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : Sad{center, rad, eyeRad, eyeHeight, eyeWidth}, 
+			lBrow{Point{center.x - eyeWidth, center.y - eyeHeight - 2*eyeRad}, 2*eyeRad, eyeRad, 200, 340}, rBrow{
+			Point{center.x + eyeWidth, center.y - eyeHeight - 2*eyeRad}, 2*eyeRad, eyeRad, 200, 340}{
+		lBrow.set_color(Color::black);
+		rBrow.set_color(Color::black);
+	}
+	virtual void attach_to(Graph_lib::Window& win) override;
+
+};
+
+class Wink :public Face{
+	Graph_lib::Arc rEye;
+	Graph_lib::Circle lEye;
+	Graph_lib::Circle innerL;
+public:
+	virtual void attach_to(Graph_lib::Window& win) override;
+	Wink(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : Face {center, rad}, rEye{Point{center.x + eyeWidth, center.y - eyeHeight}, 2*eyeRad, 2*eyeRad, 179, 359}, 
+			lEye{{center.x - eyeWidth, center.y - eyeHeight}, eyeRad}, innerL{{center.x - eyeWidth, center.y - eyeHeight}, eyeRad / 2} {
+		rEye.set_color(Color::black);
+		lEye.set_fill_color(Color::white);
+		innerL.set_fill_color(Color::black);
+	}
+};
+
+class SmileWink : public Wink{
+	public:
+	SmileWink(Point center, int rad, int eyeRad, int eyeHeight, int eyeWidth) : Wink{center, rad, eyeRad, eyeHeight, eyeWidth}
+			, mouth{Point{center}, 55, 55, 181, 359}{
+		mouth.set_color(Color::black);
+	}
+	virtual void attach_to(Graph_lib::Window& win) override;
+private:
+	Graph_lib::Arc mouth;
+};
+
+void showEmoji(Vector_ref<Emoji>& emojis, Graph_lib::Window& win);

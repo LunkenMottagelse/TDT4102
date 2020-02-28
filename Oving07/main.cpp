@@ -32,13 +32,25 @@ int main()
 	const string win_label{"Emoji factory"};
 	Simple_window win{tl, xmax, ymax, win_label};
 
-	Point emojiPos {200, 200};
-	EmptyFace test {emojiPos, emojiRadius, eyeRadius, eyeH, eyeW};
-	test.attach_to(win);
+	EmptyFace tes1 {Point{200, 200}, emojiRadius, eyeRadius, eyeH, eyeW};
+	Smiley tes2 {Point{400, 200}, emojiRadius, eyeRadius, eyeH, eyeW};
+	Sad tes3 {Point{600, 200}, emojiRadius, eyeRadius, eyeH, eyeW};
+	Surprised tes4 {Point{200, 400}, emojiRadius, eyeRadius, eyeH, eyeW};
+	Angry tes5 {Point{400, 400}, emojiRadius, eyeRadius, eyeH, eyeW};
+	SmileWink tes6 {Point{600, 400}, emojiRadius, eyeRadius, eyeH, eyeW};
+
+	Vector_ref<Emoji> emojis;
+
+	emojis.push_back(tes1);
+	emojis.push_back(tes2);
+	emojis.push_back(tes3);
+	emojis.push_back(tes4);
+	emojis.push_back(tes5);
+	emojis.push_back(tes6);
+
+	showEmoji(emojis, win);
 
 	win.wait_for_button();
 
-
-	keep_window_open();
 }
 
