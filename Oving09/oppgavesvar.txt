@@ -1,0 +1,16 @@
+dummyTest skriver ut:
+4
+4
+4
+5
+5
+5
+Programmet kræsjer siden det er flere vaiable som peker på samme verdi i dummy, og det skaper problemer når Dummy går ut av skop.
+
+Nå kopieres verdien, ikke pekeren.
+4
+4
+4
+5
+3
+5
