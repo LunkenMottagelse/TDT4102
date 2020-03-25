@@ -1,0 +1,7 @@
+Oppgave 3:
+
+Lenkede lister fungerer for eksempel mye bedre til å sette inn verdier tidlig i datasettet når datamengden er stor.
+
+Hele grunnlaget for stack og queue ligger klart, det eneste som manger er endringer i måten å sette inn verdier
+og måten man henter dem ut. Funksjonene han ta inn færre parametre siden vi allerede kjenner stedene de skal 
+lagres.
